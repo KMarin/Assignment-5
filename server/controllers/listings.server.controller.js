@@ -60,6 +60,10 @@ exports.update = function(req, res) {
     };
   }
 
+  else if(req.body.coordinates && req.body.coordinates.latitude && req.body.coordinates.longitude){
+     listing.coordinates = req.body.coordinates;
+   }
+
   /* Save the article */
   listing.save(function(err) {
     if(err) {
